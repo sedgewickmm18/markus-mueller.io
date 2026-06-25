@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Markus Müller — Career Overview">
+    <meta name="author" content="Markus Mueller">
+
+    <title>Markus Mueller — Resume</title>
+
+    <!-- Reveal.js CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #059669;
+            --accent-color: #d97706;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #ffffff;
+            --bg-lighter: #f9fafb;
+            --code-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            color: var(--text-color);
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4,
+        .reveal h5,
+        .reveal h6 {
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: normal;
+            color: var(--text-color);
+        }
+
+        .reveal h1 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 0.1em;
+            margin-bottom: 0.3em;
+        }
+
+        .reveal h2 {
+            font-size: 1.4em;
+            color: var(--secondary-color);
+            margin-top: 0.1em;
+            margin-bottom: 0.4em;
+        }
+
+        .reveal h3 {
+            font-size: 1.1em;
+            color: var(--accent-color);
+            margin-top: 0.1em;
+            margin-bottom: 0.3em;
+        }
+
+        .reveal h4 {
+            font-size: 1em;
+            color: var(--text-color);
+            margin-top: 0.1em;
+            margin-bottom: 0.2em;
+            font-weight: 600;
+        }
+
+        .reveal a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .reveal a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            text-align: left;
+            margin: 0 0 0.5em 1.5em;
+            line-height: 1.4;
+        }
+
+        .reveal ul li,
+        .reveal ol li {
+            margin-bottom: 0.3em;
+            line-height: 1.3;
+        }
+
+        .reveal code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            padding: 0.1em 0.3em;
+            background-color: var(--code-bg);
+            border-radius: 3px;
+            font-size: 0.8em;
+            color: var(--text-color);
+        }
+
+        .reveal pre {
+            width: 100%;
+            margin: 0.5em auto;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            border-radius: 6px;
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .reveal pre code {
+            padding: 0.6em;
+            max-height: 450px;
+            overflow: auto;
+            font-size: 0.6em;
+            line-height: 1.3;
+            color: var(--text-color);
+        }
+
+        .reveal .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .reveal .grid-3col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .reveal .grid-4col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .reveal .card {
+            background: var(--bg-lighter);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1em;
+            box-shadow: 0 2px 6px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reveal .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .reveal .card.ds-highlight {
+            border-left: 4px solid var(--secondary-color);
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), var(--bg-lighter));
+        }
+
+        .reveal .stat-box {
+            background: var(--bg-lighter);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5em;
+            text-align: center;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+
+        .reveal .stat-number {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal .token-highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .reveal .badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #fff;
+            font-size: 0.55em;
+            font-weight: 700;
+            padding: 0.15em 0.5em;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 0.4em;
+            letter-spacing: 0.03em;
+        }
+
+        .reveal .role-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.25em;
+        }
+
+        .reveal .role-desc {
+            font-size: 0.68em;
+            color: var(--text-light);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .reveal .role-era {
+            font-size: 0.6em;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.3em;
+        }
+
+        .reveal .cover-tagline {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-top: 0.2em;
+            margin-bottom: 1.4em;
+        }
+
+        .reveal .placeholder-box {
+            background: var(--code-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: 6px;
+            padding: 1.5em;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.75em;
+            font-style: italic;
+            margin-top: 0.6em;
+        }
+
+        .reveal .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 0.8em;
+        }
+
+        .reveal .contact-icon {
+            font-size: 1.4em;
+            flex-shrink: 0;
+        }
+
+        .reveal .contact-label {
+            font-size: 0.7em;
+            color: var(--text-light);
+            margin-bottom: 0.1em;
+        }
+
+        .reveal .contact-value {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .reveal blockquote {
+            width: 90%;
+            margin: 0.5em auto;
+            padding: 0.5em;
+            background: var(--bg-lighter);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px var(--shadow-color);
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        /* Image Modal for Click-to-Zoom */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            cursor: zoom-out;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .image-modal-close:hover,
+        .image-modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .reveal .mermaid-container {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .reveal .mermaid-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Detail modal */
+        .detail-modal-backdrop {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            cursor: zoom-out;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .detail-modal-backdrop.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-modal {
+            background: var(--bg-light);
+            border-radius: 10px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            max-width: 640px;
+            width: 90vw;
+            max-height: 82vh;
+            overflow-y: auto;
+            padding: 2em 2.2em;
+            position: relative;
+            cursor: default;
+            animation: zoomIn 0.2s ease;
+        }
+
+        .detail-modal h3 {
+            color: var(--secondary-color);
+            font-size: 1.15em;
+            margin-top: 0;
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.4em;
+        }
+
+        .detail-modal ul {
+            margin: 0 0 0 1.2em;
+            padding: 0;
+            list-style: disc;
+        }
+
+        .detail-modal ul li {
+            font-size: 0.88em;
+            line-height: 1.55;
+            color: var(--text-color);
+            margin-bottom: 0.55em;
+        }
+
+        .detail-modal ul li a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .detail-modal ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .detail-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            font-size: 1.4em;
+            color: var(--text-light);
+            cursor: pointer;
+            line-height: 1;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .detail-modal-close:hover {
+            color: var(--text-color);
+        }
+
+        .reveal .role-date {
+            font-size: 0.58em;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-top: 0.5em;
+            letter-spacing: 0.02em;
+        }
+
+        /* Clickable card hint */
+        .reveal .card.clickable {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .reveal .card.clickable::after {
+            content: '+ details';
+            position: absolute;
+            bottom: 8px;
+            right: 10px;
+            font-size: 0.55em;
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .reveal .card.clickable:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <!-- ============================================================
+             SLIDE 1 – Career Timeline Overview
+             ============================================================ -->
+        <section id="overview">
+            <h1>Markus M&uuml;ller</h1>
+            <p class="cover-tagline">Data Scientist &amp; Software Architect &mdash; 25+ years of engineering leadership</p>
+
+            <div class="grid-4col" style="margin-top: 0.6em;">
+
+                <!-- Row 1 (most recent first) -->
+                <div class="card ds-highlight clickable" data-modal="modal-data-intelligence">
+                    <div class="role-era">Recent</div>
+                    <div class="role-title">
+                        Data Scientist, Data Intelligence
+                        <span class="badge">DS</span>
+                    </div>
+                    <p class="role-desc">Versatile uses of LLMs.</p>
+                    <div class="role-date">2025 &ndash; now</div>
+                </div>
+
+                <div class="card ds-highlight clickable" data-modal="modal-maximo">
+                    <div class="role-era">Recent</div>
+                    <div class="role-title">
+                        Data Scientist, Maximo Asset Monitor
+                        <span class="badge">DS</span>
+                    </div>
+                    <p class="role-desc">Predictive maintenance models &amp; anomaly detection for industrial IoT assets.</p>
+                    <div class="role-date">2019 &ndash; 2024</div>
+                </div>
+
+                <div class="card ds-highlight clickable" data-modal="modal-rqa">
+                    <div class="role-era">Architecture</div>
+                    <div class="role-title">Lead Software Architect</div>
+                    <p class="role-desc">Continuous Engineering &amp; Requirements Quality Assistant — helping to write good requirements.</p>
+                    <div class="role-date">2018 &ndash; 2019</div>
+                </div>
+
+                <div class="card ds-highlight clickable" data-modal="modal-iot">
+                    <div class="role-era">Architecture</div>
+                    <div class="role-title">Software Architect, IoT &amp; Worker Safety</div>
+                    <p class="role-desc">Safety-critical IoT platform design for connected worker environments.</p>
+                    <div class="role-date">2016 &ndash; 2017</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="card">
+                    <div class="role-era">Architecture</div>
+                    <div class="role-title">Software Architect, High Availability</div>
+                    <p class="role-desc">Resilience patterns &amp; HA reference architectures for mission-critical systems.</p>
+                </div>
+
+                <div class="card">
+                    <div class="role-era">Engineering</div>
+                    <div class="role-title">Software Engineer, Tivoli (High Availability)</div>
+                    <p class="role-desc">Cluster management &amp; failover engineering in the Tivoli HA product suite.</p>
+                </div>
+
+                <div class="card">
+                    <div class="role-era">Engineering</div>
+                    <div class="role-title">Software Developer, LTC</div>
+                    <p class="role-desc">Low-level systems &amp; runtime development in the Linux Technology Centre.</p>
+                </div>
+
+                <div class="card">
+                    <div class="role-era">Early Career</div>
+                    <div class="role-title">Software Developer, OS/390</div>
+                    <p class="role-desc">Mainframe systems programming on OS/390 — the foundation of enterprise computing.</p>
+                </div>
+
+            </div>
+
+            <p style="font-size: 0.6em; color: var(--text-light); margin-top: 1.2em; text-align: center;">
+                Roles shown most-recent first &nbsp;|&nbsp; Click highlighted cards for details
+            </p>
+        </section>
+
+        <!-- ============================================================
+             SLIDE 2 – Contact & Links (placeholder)
+             ============================================================ -->
+        <section id="contact">
+            <h2>Contact &amp; Links</h2>
+            <p style="color: var(--text-light); font-size: 0.75em; margin-bottom: 1.2em;">
+                Get in touch or explore more of my work
+            </p>
+
+            <div class="grid-2col" style="align-items: start; max-width: 680px; margin: 0 auto;">
+
+                <div class="card contact-card">
+                    <div class="contact-icon">&#9993;</div>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><a href="mailto:markus_mueller@de.ibm.com">markus_mueller@de.ibm.com</a></div>
+                    </div>
+                </div>
+
+                <div class="card contact-card">
+                    <div class="contact-icon">&#128101;</div>
+                    <div>
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value"><a href="https://www.linkedin.com/in/markus-mueller-4243062/" target="_blank" rel="noopener">markus-mueller-4243062</a></div>
+                    </div>
+                </div>
+
+                <div class="card contact-card">
+                    <div class="contact-icon">&#128187;</div>
+                    <div>
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value"><a href="https://github.com/sedgewickmm18" target="_blank" rel="noopener">sedgewickmm18</a></div>
+                    </div>
+                </div>
+
+                <div class="card contact-card">
+                    <div class="contact-icon">&#127760;</div>
+                    <div>
+                        <div class="contact-label">Personal Site</div>
+                        <div class="contact-value"><a href="https://sedgewickmm18.github.io/markus_mueller.io" target="_blank" rel="noopener">sedgewickmm18.github.io/markus_mueller.io</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<!-- Detail modal — Data Intelligence -->
+<div id="modal-data-intelligence" class="detail-modal-backdrop">
+    <div class="detail-modal">
+        <button class="detail-modal-close" aria-label="Close">&times;</button>
+        <h3>Data Scientist &mdash; Data Intelligence</h3>
+        <ul>
+            <li>
+                Refined a business workflow generator for natural language based on
+                <a href="https://www.mdpi.com/2076-3417/16/5/2213" target="_blank" rel="noopener">BPMN Assistant</a>
+                — generating structured BPMN process models from unstructured text.
+            </li>
+            <li>
+                Built a SQL explainer for a data quality assistant grounded in
+                <a href="https://arxiv.org/abs/2512.02840" target="_blank" rel="noopener">Promptolution</a>
+                — automated prompt optimisation for LLM-driven SQL explanation tasks.
+            </li>
+            <li>
+                MCP tool development for Data Intelligence — designed and implemented
+                Model Context Protocol tooling to extend AI assistant capabilities within the platform.
+            </li>
+            <li>
+                Exploring data quality remediation with tabular foundation models —
+                <a href="https://sedgewickmm18.github.io/tabular_foundation_models.io" target="_blank" rel="noopener">see write-up here</a>.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Detail modal — Maximo Asset Monitor -->
+<div id="modal-maximo" class="detail-modal-backdrop">
+    <div class="detail-modal">
+        <button class="detail-modal-close" aria-label="Close">&times;</button>
+        <h3>Data Scientist &mdash; Maximo Asset Monitor</h3>
+        <ul>
+            <li>Designed and developed an anomaly detection suite for Maximo Asset Monitor.</li>
+            <li>
+                Developed a VAE-based solution to assess anomalous pump vibration levels
+                with respect to impeller speed.
+            </li>
+            <li>
+                Customer engagements for time-series forecasting (RNN) and specific
+                anomaly scorers (Gaussian mixture models).
+            </li>
+            <li>
+                Architecture work for the new Kafka-based pipeline — event-streaming
+                backbone for real-time asset telemetry ingestion.
+            </li>
+            <li>
+                Ported and rewrote the anomaly scoring suite for the new pipeline;
+                now part of inner source's <em>Time Series Insights</em>.
+            </li>
+            <li>
+                Designed and developed Building Insights forecaster and anomaly scorer
+                (simple statistics &amp; Prophet).
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Detail modal — Lead Software Architect / RQA -->
+<div id="modal-rqa" class="detail-modal-backdrop">
+    <div class="detail-modal">
+        <button class="detail-modal-close" aria-label="Close">&times;</button>
+        <h3>Lead Software Architect &mdash; Requirements Quality Assistant</h3>
+        <ul>
+            <li>
+                Responsible for turning a pilot built on IBM Natural Language Understanding
+                into a full-blown cloud service that seamlessly integrated with Rational
+                Requirements Management.
+            </li>
+            <li>
+                The model was trained by SMEs to evaluate requirements based on
+                crispness, clarity, and unambiguousness.
+            </li>
+            <li>
+                Role spanned the full product lifecycle: initial architecture decisions,
+                calls with third-party vendors, staff development, and cloud deployment protocols.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Detail modal — Software Architect, IoT & Worker Safety -->
+<div id="modal-iot" class="detail-modal-backdrop">
+    <div class="detail-modal">
+        <button class="detail-modal-close" aria-label="Close">&times;</button>
+        <h3>Software Architect &mdash; IoT &amp; Worker Safety</h3>
+        <ul>
+            <li>
+                Started by running volumetrics for cloud-based event handling on the
+                Bluemix-based service to understand throughput requirements.
+            </li>
+            <li>
+                Evaluated streaming candidates — Apache Spark, Apache Flink, and IBM Streams —
+                and selected IBM Streams as the platform best suited to the latency
+                and throughput demands of the worker-safety pipeline.
+            </li>
+            <li>
+                Various customer engagements to validate the architecture and gather
+                real-world requirements.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Image Modal (for future Mermaid diagrams) -->
+<div id="mermaidModal" class="image-modal">
+    <div class="image-modal-close">&times;</div>
+    <div class="image-modal-content" id="mermaidModalContent"></div>
+</div>
+
+<!-- Reveal.js Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+
+<script>
+    // Initialize Mermaid
+    mermaid.initialize({
+        startOnLoad: false,
+        theme: 'default',
+        securityLevel: 'loose',
+    });
+
+    // Reveal.js configuration with responsive settings
+    Reveal.initialize({
+        width: "100%",
+        height: "100%",
+        margin: 0.04,
+        minScale: 0.2,
+        maxScale: 2.0,
+        hash: true,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        plugins: [RevealNotes, RevealHighlight]
+    });
+
+    // Store original mermaid content before rendering
+    const originalMermaidContent = new Map();
+    document.querySelectorAll('.mermaid-container').forEach(container => {
+        const mermaidElement = container.querySelector('.mermaid');
+        if (mermaidElement) {
+            originalMermaidContent.set(container.id, mermaidElement.textContent.trim());
+        }
+    });
+
+    // Re-render mermaid diagrams when a slide becomes visible
+    function renderMermaidInSlide(slide) {
+        slide.querySelectorAll('.mermaid').forEach((element) => {
+            if (element.getAttribute('data-processed')) {
+                const container = element.closest('.mermaid-container');
+                const source = container && originalMermaidContent.get(container.id);
+                if (source) {
+                    element.removeAttribute('data-processed');
+                    element.innerHTML = '';
+                    element.textContent = source;
+                }
+            }
+            mermaid.run({ nodes: [element] }).catch(err => console.error(err));
+        });
+    }
+
+    Reveal.on('slidechanged', event => {
+        requestAnimationFrame(() => {
+            setTimeout(() => renderMermaidInSlide(event.currentSlide), 100);
+        });
+    });
+
+    requestAnimationFrame(() => {
+        setTimeout(() => renderMermaidInSlide(Reveal.getCurrentSlide() || document), 100);
+    });
+
+    // Modal helpers
+    const modal = document.getElementById('mermaidModal');
+    const modalContent = document.getElementById('mermaidModalContent');
+    const closeBtn = document.querySelector('.image-modal-close');
+
+    document.querySelectorAll('.mermaid-container').forEach(container => {
+        container.addEventListener('click', function () {
+            const originalContent = originalMermaidContent.get(this.id);
+            if (!originalContent) return;
+            const freshMermaid = document.createElement('div');
+            freshMermaid.className = 'mermaid';
+            freshMermaid.textContent = originalContent;
+            modalContent.innerHTML = '';
+            modalContent.appendChild(freshMermaid);
+            modalContent.style.width = '90vw';
+            modalContent.style.height = '90vh';
+            modalContent.style.maxWidth = '1400px';
+            modalContent.style.overflow = 'auto';
+            mermaid.run({ nodes: [freshMermaid] }).then(() => {
+                const svg = freshMermaid.querySelector('svg');
+                if (svg) {
+                    svg.style.width = '100%';
+                    svg.style.height = 'auto';
+                    svg.style.minWidth = '800px';
+                }
+            }).catch(err => console.error(err));
+            modal.classList.add('active');
+        });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // Detail modals for clickable role cards
+    function openDetailModal(id) {
+        const backdrop = document.getElementById(id);
+        if (backdrop) backdrop.classList.add('active');
+    }
+
+    function closeDetailModal(backdrop) {
+        backdrop.classList.remove('active');
+    }
+
+    document.querySelectorAll('.card.clickable').forEach(card => {
+        card.addEventListener('click', function (e) {
+            // Don't fire if the click is inside Reveal's navigation overlay
+            e.stopPropagation();
+            const targetId = this.dataset.modal;
+            if (targetId) openDetailModal(targetId);
+        });
+    });
+
+    document.querySelectorAll('.detail-modal-backdrop').forEach(backdrop => {
+        // Click on backdrop (outside modal box) closes it
+        backdrop.addEventListener('click', function (e) {
+            if (e.target === this) closeDetailModal(this);
+        });
+        // Close button
+        const btn = backdrop.querySelector('.detail-modal-close');
+        if (btn) btn.addEventListener('click', () => closeDetailModal(backdrop));
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            if (modal.classList.contains('active')) modal.classList.remove('active');
+            document.querySelectorAll('.detail-modal-backdrop.active').forEach(b => b.classList.remove('active'));
+        }
+    });
+</script>
+</body>
+</html>
